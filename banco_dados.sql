@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS ProdemgeDB;
+USE ProdemgeDB;
+
+CREATE TABLE IF NOT EXISTS FormularioServicos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    data_servico DATE NOT NULL,
+    servico VARCHAR(50) NOT NULL,
+    quantidade INT NOT NULL CHECK (quantidade BETWEEN 1 AND 100),
+    job INT NOT NULL CHECK (job BETWEEN 0 AND 9999),
+    ocr CHAR(9)
+);
